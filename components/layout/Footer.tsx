@@ -3,7 +3,7 @@ import { Brand } from "./Brand";
 import { navigation } from "@/lib/content";
 export function Footer() {
   return (
-    <footer className="bg-ink py-12 text-cream">
+    <footer className="site-footer bg-ink py-12 text-cream">
       <div className="container-shell">
         <div className="flex flex-wrap justify-between gap-10 pb-12">
           <Brand inverse />
@@ -26,7 +26,7 @@ export function Footer() {
             ))}
           </nav>
         </div>
-        <div className="flex flex-wrap justify-between gap-4 border-t border-cream/20 pt-6 text-xs text-cream/70">
+        <div className="flex flex-wrap justify-between gap-4 border-t border-cream/20 pt-6 text-sm text-cream/70">
           <span>© 2026 Alder & Co. · Portfolio concept</span>
           <span className="hidden sm:block">
             Thoughtful accounting. Human connection.

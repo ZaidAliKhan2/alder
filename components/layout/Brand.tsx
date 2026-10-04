@@ -18,7 +18,7 @@ export function Brand({ inverse = false }: { inverse?: boolean }) {
       />
       <span className="border-l border-current/25 pl-3 font-display text-[1.7rem] leading-none tracking-[-0.055em]">
         alder & co.
-        <span className="mt-2 block font-sans text-[0.5rem] font-medium tracking-[0.16em]">
+        <span className="mt-2 block font-sans text-[0.625rem] font-medium tracking-[0.1em]">
           ACCOUNTING & ADVISORY
         </span>
       </span>

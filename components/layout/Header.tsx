@@ -32,6 +32,10 @@ export function Header() {
   return (
     <header
       ref={root}
+      onBlur={(event) => {
+        if (!event.currentTarget.contains(event.relatedTarget as Node))
+          setOpen(false);
+      }}
       className="site-header container-shell relative z-30 flex items-center justify-between border-b border-line py-7"
     >
       <Brand />

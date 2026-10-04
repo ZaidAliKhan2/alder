@@ -316,3 +316,78 @@
     stroke-dashoffset: 0;
   }
 }
+
+/* Paper labels remain secondary, but no longer rely on hairline-sized text. */
+.top {
+  font-size: 11px;
+  letter-spacing: 0.055em;
+}
+.foot,
+.rows > div,
+.rows b {
+  font-size: 11px;
+}
+.rows {
+  letter-spacing: -0.025em;
+}
+.caption {
+  font-size: 11px;
+  color: #62705f;
+  letter-spacing: 0.09em;
+}
+.service > span {
+  font-size: 11px;
+  letter-spacing: 0.05em;
+}
+.object {
+  animation-duration: var(--motion-reveal);
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .sculpture {
+    right: 0;
+    width: 60%;
+    top: 27%;
+    transform: scale(0.72);
+  }
+  .caption {
+    left: 20%;
+  }
+}
+@media (max-width: 767px) {
+  .sculpture {
+    position: relative;
+    top: auto;
+    left: 50%;
+    width: 550px;
+    height: 460px;
+    margin-top: 2rem;
+    margin-bottom: -105px;
+    transform: translateX(-50%) scale(0.64);
+    --p: calc(0.12 + var(--mobile-progress, 0) * 0.3);
+    --label: 0;
+  }
+  .object {
+    top: 50%;
+  }
+  .caption {
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    font-size: 14px;
+  }
+  .orbit {
+    opacity: 0.55;
+  }
+  .chartLine {
+    stroke-dashoffset: calc(70 - var(--mobile-progress, 0) * 70);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .sculpture {
+    --p: 0.22;
+    --label: 0;
+  }
+  .chartLine {
+    stroke-dashoffset: 0;
+  }
+}

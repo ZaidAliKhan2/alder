@@ -48,7 +48,7 @@ export function ServicesOverview() {
             key={service.id}
           >
             <div className="flex items-center justify-between text-sage">
-              <span className="text-xs">0{index + 1} /</span>
+              <span className="text-sm text-muted">0{index + 1} /</span>
               <ServiceIcon index={index} />
             </div>
             <h3 className="mt-10 font-display text-[1.75rem] tracking-tight transition-transform group-hover:-translate-y-1">
@@ -57,7 +57,7 @@ export function ServicesOverview() {
             <p className="mt-3 grow text-sm leading-relaxed text-muted transition-transform group-hover:-translate-y-1">
               {service.headline}
             </p>
-            <span className="mt-8 flex justify-between text-xs">
+            <span className="mt-8 flex justify-between text-sm">
               Explore service{" "}
               <span
                 aria-hidden="true"
@@ -69,7 +69,7 @@ export function ServicesOverview() {
           </Link>
         ))}
       </div>
-      <p className="mt-5 text-xs text-muted">
+      <p className="mt-5 text-sm text-muted">
         Connected expertise. One thoughtful partnership.
       </p>
     </section>
