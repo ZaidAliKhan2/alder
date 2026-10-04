@@ -1,2 +1,9 @@
-__pycache__/
+node_modules/
+.next/
+out/
+dist/
+*.tsbuildinfo
+.env*
+!.env.example
 .sites-runtime/
+__pycache__/

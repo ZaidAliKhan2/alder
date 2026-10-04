@@ -1,0 +1,318 @@
+.sculpture {
+  position: absolute;
+  right: 1%;
+  top: 14%;
+  width: 52%;
+  height: 70%;
+  perspective: 1400px;
+  pointer-events: none;
+  --p: var(--progress, 0);
+  --label: clamp(0, (var(--p) - 0.72) * 5, 1);
+}
+.object {
+  position: absolute;
+  width: 520px;
+  height: 500px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) rotateX(var(--pointer-y, 0deg))
+    rotateY(var(--pointer-x, 0deg));
+  transform-style: preserve-3d;
+  animation: arrival 1s var(--ease) both;
+}
+.sheet {
+  position: absolute;
+  background: #fafbf5;
+  border: 1px solid #d8ded1;
+  border-radius: 3px;
+  box-shadow:
+    2px 5px 0 #d4dacd,
+    12px 26px 30px #263e3419,
+    24px 50px 70px #263e3415;
+  transform-origin: top left;
+  padding: 25px;
+  backface-visibility: hidden;
+}
+.content {
+  opacity: calc(1 - var(--label));
+}
+.top {
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #d4dacf;
+  padding-bottom: 15px;
+}
+.top span {
+  font-size: 18px;
+}
+.foot {
+  font-size: 10px;
+  margin-top: 18px;
+  color: #697b60;
+}
+.paperTitle {
+  font-family: var(--font-fraunces);
+  font-size: 33px;
+  line-height: 1.1;
+  letter-spacing: -1.5px;
+  padding: 23px 0;
+}
+.rows > div {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  border-bottom: 1px solid #dbe0d3;
+  padding: 11px 0;
+  font-size: 8px;
+}
+.rows span {
+  text-transform: uppercase;
+}
+.rows i {
+  height: 1px;
+  background: #dbe0d3;
+  flex: 1;
+}
+.rows b {
+  font-size: 10px;
+  font-weight: 400;
+}
+.grid {
+  height: 120px;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent 0 29px,
+    #d8decf 30px 31px
+  );
+  margin-top: 12px;
+}
+.grid svg {
+  width: 100%;
+  height: 100%;
+}
+.chartLine {
+  fill: none;
+  stroke: #718164;
+  stroke-width: 2;
+  stroke-dasharray: 340;
+  stroke-dashoffset: calc(130 - var(--p) * 130);
+}
+.bars {
+  height: 105px;
+  display: flex;
+  align-items: end;
+  gap: 13px;
+  padding: 15px 15px 0;
+  border-bottom: 1px solid #a4b299;
+}
+.bars i {
+  width: 22px;
+  background: #a8ba9b;
+  height: 35%;
+  box-shadow: 4px -4px 0 #c1cfb7;
+}
+.bars i:nth-child(2) {
+  height: 50%;
+}
+.bars i:nth-child(3) {
+  height: 63%;
+}
+.bars i:nth-child(4) {
+  height: 78%;
+}
+.bars i:nth-child(5) {
+  height: 93%;
+  background: #7c9669;
+}
+.noteContent {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  font-size: 11px;
+  line-height: 1.5;
+}
+.noteContent > span {
+  background: #c69547;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  line-height: 25px;
+  text-align: center;
+  color: #fff4d5;
+}
+.noteContent strong {
+  font-weight: 500;
+}
+.service {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 25px;
+  font-family: var(--font-fraunces);
+  font-size: 30px;
+  line-height: 1.15;
+  letter-spacing: -1px;
+  opacity: var(--label);
+}
+.service > span {
+  font-family: var(--font-dm-sans);
+  font-size: 9px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+.note .service {
+  font-size: 22px;
+  padding: 15px;
+}
+.note .service > span {
+  display: none;
+}
+.ledger {
+  width: 295px;
+  height: 340px;
+  top: 113px;
+  left: 98px;
+  z-index: 3;
+  transform: translate3d(
+      calc(var(--p) * -53px),
+      calc(var(--p) * -113px),
+      calc(70px - var(--p) * 70px)
+    )
+    rotateX(calc(24deg - var(--p) * 24deg))
+    rotateY(calc(-22deg + var(--p) * 22deg))
+    rotateZ(calc(-16deg + var(--p) * 16deg)) scale(calc(1 - var(--p) * 0.2));
+}
+.chart {
+  width: 325px;
+  height: 233px;
+  top: 2px;
+  left: 133px;
+  background: #f1f3e9;
+  transform: translate3d(
+      calc(var(--p) * 167px),
+      calc(var(--p) * -2px),
+      calc(-35px + var(--p) * 35px)
+    )
+    rotateX(calc(28deg - var(--p) * 28deg))
+    rotateY(calc(-20deg + var(--p) * 20deg))
+    rotateZ(calc(9deg - var(--p) * 9deg)) scale(calc(1 - var(--p) * 0.3));
+}
+.balance {
+  width: 240px;
+  height: 220px;
+  left: 291px;
+  top: 242px;
+  background: #dce6d6;
+  transform: translate3d(
+      calc(var(--p) * 9px),
+      calc(var(--p) * -44px),
+      calc(30px - var(--p) * 30px)
+    )
+    rotateX(calc(24deg - var(--p) * 24deg))
+    rotateY(calc(-25deg + var(--p) * 25deg))
+    rotateZ(calc(12deg - var(--p) * 12deg)) scale(calc(1 - var(--p) * 0.06));
+}
+.note {
+  left: 10px;
+  top: 352px;
+  width: 220px;
+  padding: 18px;
+  background: #f4f3df;
+  z-index: 4;
+  transform: translate3d(
+      calc(var(--p) * 35px),
+      calc(var(--p) * -35px),
+      calc(110px - var(--p) * 110px)
+    )
+    rotateX(calc(18deg - var(--p) * 18deg))
+    rotateZ(calc(-12deg + var(--p) * 12deg));
+}
+.amber {
+  position: absolute;
+  width: 38px;
+  height: 55px;
+  background: #c69547;
+  left: 348px;
+  top: 190px;
+  z-index: 5;
+  transform: translate(calc(var(--p) * -14px), calc(var(--p) * -60px))
+    rotate(-15deg);
+  box-shadow: 4px 8px 15px #63431822;
+  opacity: calc(0.9 - var(--label) * 0.9);
+}
+.orbit {
+  position: absolute;
+  border: 1px solid #cbd2c369;
+  border-radius: 50%;
+  width: 680px;
+  height: 680px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) rotateX(65deg) rotateZ(-25deg);
+}
+.caption {
+  position: absolute;
+  bottom: -20px;
+  left: 30%;
+  font-size: 9px;
+  letter-spacing: 0.15em;
+  color: #839177;
+  white-space: nowrap;
+}
+@keyframes arrival {
+  from {
+    opacity: 0;
+    translate: 0 25px;
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+@media (max-width: 1100px) {
+  .sculpture {
+    right: -8%;
+    top: 23%;
+    transform: scale(0.85);
+  }
+}
+@media (max-width: 767px) {
+  .sculpture {
+    right: auto;
+    left: 50%;
+    top: 450px;
+    width: 550px;
+    height: 430px;
+    transform: translateX(-50%) scale(0.72);
+    transform-origin: 50% 0;
+    --p: 0;
+  }
+  .sheet {
+    transform-origin: center;
+  }
+  .object {
+    top: 55%;
+  }
+  .caption {
+    bottom: -42px;
+    left: 29%;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .sculpture {
+    --p: 0;
+  }
+  .object {
+    animation: none;
+    transform: translate(-50%, -50%);
+  }
+  .chartLine {
+    stroke-dashoffset: 0;
+  }
+}
